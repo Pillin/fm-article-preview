@@ -8,10 +8,15 @@ export const theme = {
     neutralWhite: "white",
     neutralGrayishViolet: "hsl(257, 7%, 63%)",
     neutralVeryDarkBlue: "hsl(255, 11%, 22%)",
-    neutralVeryDarkViolet: "hsl(260, 8%, 14%)"
+    neutralVeryDarkViolet: "hsl(260, 8%, 14%)",
+    neutralVeryDarkGrayishBlue: "hsl(217, 19%, 35%)",
+    desaturatedDarkBlue: "hsl(214, 17%, 51%)",
+    grayishBlue: "hsl(212, 23%, 69%)",
+    lightGrayishBlue: "hsl(210, 46%, 95%)"
   },
+
   typography: {
-    family: "Poppins",
+    family: "Manrope",
     primaryBold: 700,
     secondaryBold: 500,
     primary: "18px"
