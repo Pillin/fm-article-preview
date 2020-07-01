@@ -20,6 +20,28 @@ const Container = styled.section`
   > span {
     color: ${(props) => props.theme.colors.lightGrayishBlue};
   }
+
+  @media (min-width: 679px) {
+    bottom: 90px;
+    right: -50px;
+    position: absolute;
+    width: 200px;
+    border-radius: 10px;
+    padding: 12px;
+    > button {
+      display: none;
+    }
+
+    &:before {
+      position: absolute;
+      bottom: -13px;
+      border-top: 20px solid
+        ${(props) => props.theme.colors.neutralVeryDarkViolet};
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      content: " ";
+    }
+  }
 `;
 
 const ShareContainer = (props) => {

@@ -10,6 +10,11 @@ const Container = styled.section`
   border-radius: 20px;
   max-width: 320px;
   background-color: white;
+  @media (min-width: 679px) {
+    flex-direction: row;
+    max-width: 730px;
+    max-height: 280px;
+  }
 `;
 
 const Content = styled.section`
@@ -22,6 +27,11 @@ const Img = styled.img`
   max-width: 320px;
   max-height: 200px;
   border-radius: 20px 20px 0px 0px;
+  @media (min-width: 679px) {
+    border-radius: 20px 0px 0px 20px;
+    max-width: 280px;
+    max-height: 280px;
+  }
 `;
 const ImgProfile = styled.img`
   width: 45px;
@@ -29,12 +39,10 @@ const ImgProfile = styled.img`
   border-radius: 50%;
 `;
 const UserInformation = styled.section`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 50px;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 const H4 = styled.h4`
   margin: 0px;
@@ -50,7 +58,18 @@ const Paragraph = styled.p`
 const Date = styled.span`
   color: ${(props) => props.theme.colors.grayishBlue};
 `;
-
+const UserContent = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  align-content: flex-start;
+  > * {
+    margin-right: 10px;
+  }
+`;
 const Card = (props) => {
   const {
     profileImg,
@@ -69,11 +88,14 @@ const Card = (props) => {
         <H1>{title}</H1>
         <Paragraph>{description}</Paragraph>
         <UserInformation>
-          <ImgProfile src={profileImg} />
-          <H4>{name}</H4>
-          <Date>{publicationDate}</Date>
+          <UserContent>
+            <ImgProfile src={profileImg} />
+            <H4>{name}</H4>
+            <Date>{publicationDate}</Date>
+          </UserContent>
+
           <ShareIcon
-            onClick={() => setSocialMedia(true)}
+            onClick={() => setSocialMedia(!socialMedia)}
             background="hsla(0, 0%, 85%, 0.56)"
             fill="hsl(260, 8%, 14%)"
             size="40px"
